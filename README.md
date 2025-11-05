@@ -60,7 +60,7 @@ This project reflects **real-world support operations** used in Service Desk / A
 
 | New Ticket Form | Ticket Dashboard | SLA Timer View |
 |---|---|---|
-| ![New Ticket Form](create ticket.jpg) | ![Ticket Dashboard](ticket-dashboard.jpg) | ![SLA Timer View](sla-timer.jpg) |
+| ![New Ticket Form](createticket.jpg) | ![Ticket Dashboard](ticket-dashboard.jpg) | ![SLA Timer View](sla-timer.jpg) |
 
 ---
 
