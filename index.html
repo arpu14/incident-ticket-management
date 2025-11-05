@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Incident Ticket Management </title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="app-header">
+    <h1>🎀 Incident Ticket Management</h1>
+    <p class="subtitle">Create • Prioritize • Track • Resolve with SLA timers</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>➕ New Ticket</h2>
+      <form id="ticketForm" class="grid">
+        <div class="field">
+          <label for="title">Title</label>
+          <input id="title" type="text" placeholder="e.g., SAP login failure" required />
+        </div>
+
+        <div class="field">
+          <label for="category">Category</label>
+          <select id="category" required>
+            <option value="Access">Access</option>
+            <option value="Incident">Incident</option>
+            <option value="Service Request">Service Request</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="priority">Priority</label>
+          <select id="priority" required>
+            <option value="Low">Low (24h SLA)</option>
+            <option value="Medium">Medium (8h SLA)</option>
+            <option value="High">High (4h SLA)</option>
+            <option value="Critical">Critical (2h SLA)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="assignee">Assignee (optional)</label>
+          <input id="assignee" type="text" placeholder="e.g., L2-Apps Team" />
+        </div>
+
+        <div class="field field-span">
+          <label for="description">Description</label>
+          <textarea id="description" rows="3" placeholder="Short, clear explanation of the issue..." required></textarea>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" type="submit">Create Ticket</button>
+          <button class="btn" type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>📋 Tickets</h2>
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search by title or ID..." />
+        <select id="filterStatus">
+          <option value="all">All Statuses</option>
+          <option value="Open">Open</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Resolved">Resolved</option>
+          <option value="Closed">Closed</option>
+        </select>
+        <select id="filterPriority">
+          <option value="all">All Priorities</option>
+          <option value="Critical">Critical</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+        <button class="btn soft" id="clearFilters">Clear</button>
+      </div>
+
+      <div class="responsive-table">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Priority</th>
+              <th>Status</th>
+              <th>Created</th>
+              <th>SLA Due</th>
+              <th>Remaining</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="ticketBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made with 💗 for support workflow practice</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
